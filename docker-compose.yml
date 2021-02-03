@@ -1,25 +1,25 @@
 version: '3'
 
 services:
-  # database:
-  #   build:
-  #     context: ./database
+  database:
+    build:
+      context: ./database
   #   environment:
   #     - MYSQL_DATABASE=${DATABASE_NAME}
   #     - MYSQL_USER=${DATABASE_USER}
   #     - MYSQL_PASSWORD=${DATABASE_PASSWORD}
   #     - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD}
-  #   ports:
-  #     - "3306:3306"
-  #   volumes:
-  #     - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
-  #     - ./database/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      #- ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/data:/var/lib/mysql
 
   php-fpm:
     build:
       context: ./php-fpm
-    # depends_on:
-    #   - database
+    depends_on:
+      - database
     # environment:
     #   - APP_ENV=${APP_ENV}
     #   - APP_SECRET=${APP_SECRET}
