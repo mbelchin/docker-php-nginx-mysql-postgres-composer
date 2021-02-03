@@ -2,6 +2,12 @@
 
 Fully LEMP working environment for Docker compose.
 
+PHP 7.4.14
+
+Nginx 1.18
+
+Mysql 8.0.23
+
 ## Pre-requisites
 
 You must have docker desktop running on your computer. Follow instalation instructions from here:
