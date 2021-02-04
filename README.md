@@ -2,35 +2,33 @@
 
 Docker Compose configuration to run PHP, Nginx, PHP-FPM, MySQL, PostgreSQL, Composer and Symfony
 
-PHP 7.4.14
-
-Nginx 1.18
-
-MySQL 8.0.23
-
-PostgreSQL 13.1
+- PHP 7.4.14
+- nginx 1.18
+- MySQL 8.0.23
+- PostgreSQL 13.1
 
 ## Overview
 
 This Docker Compose configuration allows you to run PHP 7.4 with Nginx 1.18, PHP-FPM, MySQL 8.0.23 and PostgreSQL 13.1, Composer and Symfony.
 
-It exposes 5 services:
+It exposes 4 services:
 
-nginx
-php-fom
-mysql
-postgres
-composer
+- nginx
+- php-fom
+- mysql
+- postgres
 
-To know all extensions enabled for PHP you can run it using `docker-compose up`and visit: http://localhost/phpinfo.php and check the PHP info.
+To know all extensions enabled for PHP you can run it using `docker-compose up`and visit: http://localhost/ and check the PHP info.
+
+PHP has by default **pdo_mysql**, **pdo_pgsql** and **Xdebug** enabled.
 
 The UUID extension for PostgreSQL has been added.
 
 Nginx includes default configuration for Symfony 5.
 
-Composer runs during boot to install the vendors.
+Composer runs during boot to install the vendors. More info: https://getcomposer.org
 
-Symfony command is available.
+Symfony command is available. More info: https://symfony.com/download
 
 
 ## Prerequisites
@@ -75,6 +73,8 @@ For instance, you can check symfony requirements:
 `docker-compose exec php-fpm symfony check:req`
 
 ### Use PHP
+
+You can run PHP commands, i.e.:
 
 `docker-compose exec php-fpm php -v`
 
