@@ -1,0 +1,4 @@
+logs/nginx/*
+logs/php/*
+mysql/data/*
+postgres/data/*
