@@ -1,30 +1,37 @@
-# docker-php-nginx-mysql-postgres-composer
+# docker compose configuration for PHP, mginx, PHP-FPM, MySQL, PostgreSQL, Composer and Symfony
 
-Docker Compose configuration to run PHP, Nginx, PHP-FPM, MySQL, PostgreSQL, Composer and Symfony
+> Docker Compose configuration to run PHP, mginx, PHP-FPM, MySQL, PostgreSQL, Composer and Symfony
 
 - PHP 7.4.14
 - nginx 1.18
 - MySQL 8.0.23
 - PostgreSQL 13.1
 
+![GitHub](https://img.shields.io/github/license/mbelchin/docker-php-nginx-mysql-postgres-composer.svg)
+![GitHub release](https://img.shields.io/github/release/mbelchin/docker-php-nginx-mysql-postgres-composer.svg)
+
+[![Twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmbelchin%2Fdocker-php-nginx-mysql-postgres-composer&hashtags=docker,docker-compose,php,php7,nginx,mysql,mysql8,postgres,postgres13,composer,symfony)
+
+*Read this in other languages: [English](README.md), [Español](README.es.md).*
+
 ## Overview
 
-This Docker Compose configuration allows you to run PHP 7.4 with Nginx 1.18, PHP-FPM, MySQL 8.0.23 and PostgreSQL 13.1, Composer and Symfony.
+This Docker Compose configuration allows you to run PHP 7.4 with nginx 1.18, PHP-FPM, MySQL 8.0.23, PostgreSQL 13.1, Composer and Symfony.
 
 It exposes 4 services:
 
 - nginx
-- php-fom
+- php-fpm
 - mysql
 - postgres
 
-To know all extensions enabled for PHP you can run it using `docker-compose up`and visit: http://localhost/ and check the PHP info.
+To know all extensions enabled for PHP you can run it using `docker-compose up` and visit: http://localhost/ and check the PHP info.
 
 PHP has by default **pdo_mysql**, **pdo_pgsql** and **Xdebug** enabled.
 
 The UUID extension for PostgreSQL has been added.
 
-Nginx includes default configuration for Symfony 5.
+Nginx includes default basic configuration for Symfony 5.
 
 Composer runs during boot to install the vendors. More info: https://getcomposer.org
 
@@ -33,7 +40,7 @@ Symfony command is available. More info: https://symfony.com/download
 
 ## Prerequisites
 
-You must have docker running on your computer. Follow instalation instructions from here:
+You must have docker running on your computer. Follow the installation instructions from here:
 
 https://docs.docker.com/desktop/
 
